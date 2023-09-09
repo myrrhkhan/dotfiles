@@ -1,0 +1,1 @@
+/Users/myrrh/.config/nvim/init.lua
