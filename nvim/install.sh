@@ -24,4 +24,6 @@ echo ${install_cmd}
 command="${install_cmd} neovim"
 echo "Running '${command}'"
 eval " $command"
+eval "mkdir ~/.config/nvim"
+eval "ln -s ./* ~/.config/nvim/"
 
