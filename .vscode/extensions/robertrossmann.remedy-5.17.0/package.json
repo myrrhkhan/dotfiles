@@ -1,0 +1,90 @@
+{
+	"name": "remedy",
+	"description": "A dark & bright theme with orange accents with roots in Base16 - Eighties colour theme",
+	"version": "5.17.0",
+	"author": "Robert Rossmann <rr.rossmann@me.com>",
+	"bugs": {
+		"url": "https://github.com/robertrossmann/vscode-remedy/issues"
+	},
+	"categories": [
+		"Themes"
+	],
+	"contributes": {
+		"themes": [
+			{
+				"label": "Remedy - Bright (Straight)",
+				"uiTheme": "vs",
+				"path": "./themes/bright-color-theme.json"
+			},
+			{
+				"label": "Remedy - Bright (Tilted)",
+				"uiTheme": "vs",
+				"path": "./themes/bright-tilted-color-theme.json"
+			},
+			{
+				"label": "Remedy - Dark (Straight)",
+				"uiTheme": "vs-dark",
+				"path": "./themes/dark-color-theme.json"
+			},
+			{
+				"label": "Remedy - Dark (Tilted)",
+				"uiTheme": "vs-dark",
+				"path": "./themes/dark-tilted-color-theme.json"
+			}
+		]
+	},
+	"devDependencies": {
+		"@semantic-release/changelog": "^6.0.0",
+		"@semantic-release/exec": "^6.0.0",
+		"@semantic-release/git": "^10.0.0",
+		"@strv/commitlint-config": "^2.0.0",
+		"@strv/eslint-config-node": "^3.0.0",
+		"@strv/eslint-config-typescript": "^3.0.0",
+		"@strv/remark-config": "^2.0.0",
+		"@types/color": "^3.0.2",
+		"@vscode/vsce": "^2.17.0",
+		"color": "^4.0.0",
+		"commitlint": "^17.0.0",
+		"eslint": "^8.21.0",
+		"remark-cli": "^11.0.0",
+		"semantic-release": "^19.0.0",
+		"source-map-support": "^0.5.20",
+		"tsconfig-paths": "^4.1.0",
+		"typescript": "^4.7.0"
+	},
+	"displayName": "Remedy",
+	"engines": {
+		"node": ">=18",
+		"vscode": "^1.54.0"
+	},
+	"galleryBanner": {
+		"color": "#36302c",
+		"theme": "dark"
+	},
+	"homepage": "https://github.com/robertrossmann/vscode-remedy",
+	"icon": "resources/vscode-remedy-icon.png",
+	"keywords": [
+		"base16",
+		"eighties",
+		"orange",
+		"theme",
+		"italics"
+	],
+	"license": "SEE LICENSE IN LICENSE",
+	"publisher": "robertrossmann",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/robertrossmann/vscode-remedy.git"
+	},
+	"__metadata": {
+		"id": "5f2bb8f7-dc95-49f9-be2f-0278fa401434",
+		"publisherDisplayName": "Robert Rossmann",
+		"publisherId": "98352602-a18a-4e10-af4f-20f27045849c",
+		"targetPlatform": "undefined",
+		"isApplicationScoped": false,
+		"updated": true,
+		"isPreReleaseVersion": false,
+		"installedTimestamp": 1675571386867,
+		"preRelease": false
+	}
+}

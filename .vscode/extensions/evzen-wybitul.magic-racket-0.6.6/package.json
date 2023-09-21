@@ -1,0 +1,288 @@
+{
+	"name": "magic-racket",
+	"displayName": "Magic Racket",
+	"description": "LSP support, REPL integration, and top notch syntax highlighting for the coolest of Lisps!",
+	"version": "0.6.6",
+	"activationEvents": [
+		"onCommand:magic-racket.loadFileInRepl",
+		"onCommand:magic-racket.runFile",
+		"onCommand:magic-racket.executeSelectionInRepl",
+		"onCommand:magic-racket.openRepl",
+		"onCommand:magic-racket.showOutputTerminal",
+		"onLanguage:racket"
+	],
+	"main": "./out/main.js",
+	"galleryBanner": {
+		"color": "#405DA7",
+		"theme": "dark"
+	},
+	"icon": "images/icon.png",
+	"engines": {
+		"vscode": "^1.59.0"
+	},
+	"licence": "SEE LICENSE IN LICENSE",
+	"homepage": "https://github.com/Eugleo/magic-racket/",
+	"bugs": {
+		"url": "https://github.com/Eugleo/magic-racket/issues",
+		"email": "wybitul.evzen@gmail.com"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Eugleo/magic-racket.git"
+	},
+	"categories": [
+		"Programming Languages",
+		"Formatters"
+	],
+	"keywords": [
+		"racket",
+		"drracket",
+		"lisp",
+		"scheme",
+		"repl"
+	],
+	"publisher": "evzen-wybitul",
+	"author": {
+		"name": "Evžen Wybitul"
+	},
+	"contributes": {
+		"configurationDefaults": {
+			"[racket]": {
+				"editor.rulers": [
+					102
+				],
+				"editor.wordSeparators": "()[]{}\",'`;#|"
+			}
+		},
+		"languages": [
+			{
+				"id": "racket",
+				"aliases": [
+					"Racket",
+					"racket"
+				],
+				"extensions": [
+					".rkt"
+				],
+				"configuration": "language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "racket",
+				"scopeName": "source.racket",
+				"path": "./syntaxes/racket.tmLanguage.json"
+			}
+		],
+		"configuration": {
+			"title": "Magic Racket",
+			"properties": {
+				"magicRacket.languageServer.enabled": {
+					"type": "boolean",
+					"default": true,
+					"markdownDescription": "Enable language server support. It is recommended to leave this turned on.",
+					"order": 0
+				},
+				"magicRacket.languageServer.command": {
+					"type": "string",
+					"default": "racket",
+					"markdownDescription": "Path to the executable that is used to launch the Racket language server.",
+					"order": 1
+				},
+				"magicRacket.languageServer.arguments": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					},
+					"default": [
+						"--lib",
+						"racket-langserver"
+					],
+					"markdownDescription": "Arguments passed to the language server executable set in `#magicRacket.languageServer.command#`.",
+					"order": 2
+				},
+				"magicRacket.trace.server": {
+					"scope": "window",
+					"type": "string",
+					"enum": [
+						"off",
+						"messages",
+						"verbose"
+					],
+					"default": "off",
+					"description": "Enable tracing of the communication between VS Code and the language server.",
+					"order": 3
+				},
+				"magicRacket.general.racketPath": {
+					"type": "string",
+					"default": "racket",
+					"markdownDescription": "Path to the Racket executable that is used both to open REPLs and to run files."
+				},
+				"magicRacket.general.racoPath": {
+					"type": "string",
+					"default": "raco",
+					"markdownDescription": "Path to the `raco` executable that is used to run tests."
+				},
+				"magicRacket.REPL.arguments": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					},
+					"default": [
+						"--repl"
+					],
+					"markdownDescription": "Arguments passed into `#magicRacket.general.racketPath#` when launching a REPL."
+				},
+				"magicRacket.REPL.title": {
+					"type": "string",
+					"default": "REPL ($name)",
+					"markdownDescription": "Template string for the title of Racket REPLs. Variable `$name` will get replaced by the file name."
+				},
+				"magicRacket.outputTerminal.numberOfOutputTerminals": {
+					"type": "string",
+					"enum": [
+						"one",
+						"many"
+					],
+					"default": "one",
+					"enumDescriptions": [
+						"Runs every file in the same output terminal",
+						"Runs each file in its own output terminal"
+					]
+				},
+				"magicRacket.outputTerminal.sharedOutputTerminalTitle": {
+					"type": "string",
+					"default": "Racket Output",
+					"markdownDescription": "Specifies the title of the the shared output terminal."
+				},
+				"magicRacket.outputTerminal.outputTerminalTitle": {
+					"type": "string",
+					"default": "Output ($name)",
+					"markdownDescription": "Specifies the template string for the title of the file-specific output terminal. Substring `$name` will get replaced by the file name."
+				}
+			}
+		},
+		"commands": [
+			{
+				"command": "magic-racket.loadFileInRepl",
+				"title": "Racket: Load file in REPL",
+				"icon": {
+					"light": "images/repl-light.svg",
+					"dark": "images/repl-dark.svg"
+				}
+			},
+			{
+				"command": "magic-racket.runFile",
+				"title": "Racket: Run file in terminal",
+				"icon": {
+					"light": "images/run.svg",
+					"dark": "images/run.svg"
+				}
+			},
+			{
+				"command": "magic-racket.executeSelectionInRepl",
+				"title": "Racket: Execute line or selection in REPL"
+			},
+			{
+				"command": "magic-racket.openRepl",
+				"title": "Racket: Open the REPL for the current file"
+			},
+			{
+				"command": "magic-racket.showOutputTerminal",
+				"title": "Racket: Show the output terminal for the current file"
+			}
+		],
+		"menus": {
+			"editor/title": [
+				{
+					"when": "editorLangId == racket",
+					"command": "magic-racket.runFile",
+					"group": "navigation"
+				},
+				{
+					"when": "editorLangId == racket",
+					"command": "magic-racket.loadFileInRepl",
+					"group": "navigation"
+				}
+			],
+			"editor/context": [
+				{
+					"when": "resourceLangId == racket && editorHasSelection",
+					"command": "magic-racket.executeSelectionInRepl",
+					"group": "z_commands"
+				}
+			]
+		},
+		"keybindings": [
+			{
+				"command": "magic-racket.executeSelectionInRepl",
+				"key": "Alt+Enter",
+				"when": "resourceLangId == racket && editorTextFocus"
+			},
+			{
+				"key": "Alt+\\",
+				"mac": "Alt+\\",
+				"command": "editor.action.insertSnippet",
+				"when": "resourceLangId == racket && editorTextFocus",
+				"args": {
+					"langId": "racket",
+					"name": "lambda"
+				}
+			}
+		],
+		"snippets": [
+			{
+				"language": "racket",
+				"path": "./snippets/racket.json"
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run build-base -- --minify",
+		"package": "vsce package -o magic-racket.vsix",
+		"build-base": "esbuild ./src/extension.ts --bundle --outfile=out/main.js --external:vscode --format=cjs --platform=node --target=node16",
+		"build": "npm run build-base -- --sourcemap",
+		"watch": "npm run build-base -- --sourcemap --watch",
+		"compile": "tsc -p ./",
+		"pretest": "npm run compile && npm run lint",
+		"lint": "eslint src --ext ts",
+		"test": "node ./out/test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/glob": "^7.1.3",
+		"@types/mocha": "^10.0.1",
+		"@types/node": "14.x",
+		"@types/shell-quote": "^1.7.1",
+		"@types/vscode": "^1.59.0",
+		"@typescript-eslint/eslint-plugin": "^4.30.0",
+		"@typescript-eslint/parser": "^4.30.0",
+		"esbuild": "^0.17.12",
+		"eslint": "^7.32.0",
+		"eslint-config-prettier": "^8.3.0",
+		"eslint-config-standard": "^16.0.3",
+		"eslint-plugin-import": "^2.24.2",
+		"eslint-plugin-node": "^11.1.0",
+		"eslint-plugin-prettier": "^4.0.0",
+		"eslint-plugin-promise": "^5.1.0",
+		"glob": "^7.1.7",
+		"mocha": "^10.2.0",
+		"prettier": "^2.3.2",
+		"typescript": "^4.3.2",
+		"vscode-test": "^1.6.1"
+	},
+	"dependencies": {
+		"shell-quote": "^1.8.0",
+		"vscode-languageclient": "^7.0.0"
+	},
+	"__metadata": {
+		"id": "d8508201-6c73-4091-b44a-f974e541649e",
+		"publisherId": "f25363b3-e08b-40fb-9624-561592772d23",
+		"publisherDisplayName": "Evžen Wybitul",
+		"targetPlatform": "undefined",
+		"isApplicationScoped": false,
+		"updated": true,
+		"isPreReleaseVersion": false,
+		"installedTimestamp": 1689139918477,
+		"preRelease": false
+	}
+}
