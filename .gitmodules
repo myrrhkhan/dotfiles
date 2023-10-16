@@ -1,0 +1,6 @@
+[submodule "catpuccin-iterm"]
+	path = catpuccin-iterm
+	url = https://github.com/catppuccin/iterm.git
+[submodule "discord-theme"]
+	path = discord-theme
+	url = https://github.com/catppuccin/discord.git
