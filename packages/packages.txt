@@ -6,3 +6,4 @@ grep
 rg
 fd
 wget
+neofetch

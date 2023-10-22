@@ -9,3 +9,4 @@ xscreensaver
 obs
 slack
 element
+brave-browser
