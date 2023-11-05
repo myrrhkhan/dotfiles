@@ -56,6 +56,9 @@ case $INFO in
     ICON_PADDING_RIGHT=6
     ICON=󰈄
     ;;
+"Obsidian")
+    ICON=󰽛
+    ;;
 "Preview")
     ICON_PADDING_RIGHT=3
     ICON=

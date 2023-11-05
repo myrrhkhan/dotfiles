@@ -1,12 +1,12 @@
-onedrive
 raycast
 obsidian
 wacom-tablet
 discord
 shottr
-microsoft-outlook
 xscreensaver
 obs
 slack
 element
 brave-browser
+thunderbird
+microsoft-office

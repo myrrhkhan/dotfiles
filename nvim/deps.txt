@@ -1,0 +1,7 @@
+npm
+gcc
+llvm
+fzf
+grep
+rg
+fd
