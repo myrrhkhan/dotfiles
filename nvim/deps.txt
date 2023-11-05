@@ -1,7 +1,6 @@
+neovim
 npm
 gcc
 llvm
 fzf
-grep
-rg
-fd
+ripgrep
