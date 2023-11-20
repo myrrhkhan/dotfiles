@@ -4,3 +4,4 @@ gcc
 llvm
 fzf
 ripgrep
+jdtls

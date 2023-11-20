@@ -10,3 +10,4 @@ element
 brave-browser
 thunderbird
 microsoft-office
+protonvpn
