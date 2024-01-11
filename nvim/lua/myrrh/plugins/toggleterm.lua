@@ -8,6 +8,6 @@ return {
 		})
 
 		local keymap = vim.keymap
-		keymap.set("n", "<C-S-'?", "<cmd>ToggleTerm<CR>")
+		keymap.set("n", "<leader>tt", "<cmd>ToggleTerm<CR>")
 	end,
 }

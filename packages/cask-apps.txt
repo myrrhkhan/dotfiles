@@ -11,3 +11,4 @@ brave-browser
 thunderbird
 microsoft-office
 protonvpn
+racket
