@@ -7,3 +7,9 @@
 [submodule "fonts/nerd-fonts"]
 	path = fonts/nerd-fonts
 	url = git@github.com:ryanoasis/nerd-fonts.git
+[submodule "zsh/.oh-my-zsh/custom/plugins/zsh-autosuggestions"]
+	path = zsh/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+	url = git@github.com:zsh-users/zsh-autosuggestions.git
+[submodule "zsh/.oh-my-zsh/custom/themes/powerlevel10k"]
+	path = zsh/.oh-my-zsh/custom/themes/powerlevel10k
+	url = git@github.com:romkatv/powerlevel10k.git
