@@ -1,0 +1,6 @@
+Go here https://github.com/null-dev/firefox-profile-switcher-connector
+Clone
+dnf search for gtk3, gtk3-devel or something
+install that
+cargo build
+cargo install --path .

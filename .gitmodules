@@ -13,3 +13,6 @@
 [submodule "zsh/.oh-my-zsh/custom/themes/powerlevel10k"]
 	path = zsh/.oh-my-zsh/custom/themes/powerlevel10k
 	url = git@github.com:romkatv/powerlevel10k.git
+[submodule "only-linux/firefox-profile-switcher-connector"]
+	path = only-linux/firefox-profile-switcher-connector
+	url = git@github.com:null-dev/firefox-profile-switcher-connector.git
