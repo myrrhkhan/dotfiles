@@ -1,7 +1,0 @@
-{
-  "lambda": {
-    "scope": "racket",
-    "prefix": "lmb",
-    "body": "λ"
-  }
-}
