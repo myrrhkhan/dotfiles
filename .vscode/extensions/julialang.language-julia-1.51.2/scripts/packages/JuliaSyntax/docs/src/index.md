@@ -1,2 +1,0 @@
-# JuliaSyntax.jl
-
