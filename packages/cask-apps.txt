@@ -12,3 +12,4 @@ thunderbird
 microsoft-office
 protonvpn
 racket
+mactex
