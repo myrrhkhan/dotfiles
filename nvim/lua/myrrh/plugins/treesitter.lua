@@ -49,6 +49,7 @@ return {
 					"git_config",
 					"git_rebase",
 					"python",
+					"rust",
 				},
 				auto_install = true,
 			},
