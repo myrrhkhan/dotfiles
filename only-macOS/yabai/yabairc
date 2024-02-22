@@ -38,6 +38,5 @@ yabai -m rule --add app="^FaceTime$" manage=off
 yabai -m rule --add app="^Finder$" manage=off
 yabai -m rule --add app="^Shottr$" manage=off
 yabai -m rule --add app="^Stickies$" manage=off
-yabai -m rule --add app="^iTerm2$" manage=off
 
 # yabai -m config external_bar all:32:0
