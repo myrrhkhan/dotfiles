@@ -1,5 +1,8 @@
 return {
 	"mfussenegger/nvim-dap",
+	dependencies = {
+		"nvim-neotest/nvim-nio",
+	},
 	config = function()
 		local keymap = vim.keymap
 		local dap = require("dap")

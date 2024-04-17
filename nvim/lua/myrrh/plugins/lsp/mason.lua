@@ -28,10 +28,10 @@ return {
 				"svelte",
 				"lua_ls",
 				"emmet_ls",
-				"pyright",
 				"clangd",
 				"jdtls",
 				"rust_analyzer",
+				"pyright",
 			},
 			-- auto-install configured servers (with lspconfig)
 			automatic_installation = true, -- not the same as ensure_installed
@@ -41,8 +41,8 @@ return {
 			ensure_installed = {
 				"prettier",
 				"stylua",
-				"eslint_d",
 				"clang-format",
+				"black",
 			},
 		})
 	end,
