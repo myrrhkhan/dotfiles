@@ -1,0 +1,21 @@
+return {
+	{
+		"zbirenbaum/copilot.lua",
+		cmd = "Copilot",
+		event = "VeryLazy",
+		config = function()
+			require("copilot").setup({
+				suggestion = { enabled = true },
+				panel = { enabled = true },
+			})
+		end,
+	},
+	{
+		"zbirenbaum/copilot-cmp",
+		event = "VeryLazy",
+		requires = { "zbirenbaum/copilot.vim" },
+		config = function()
+			require("copilot_cmp").setup()
+		end,
+	},
+}

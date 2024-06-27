@@ -21,7 +21,7 @@ return {
 		workspaces = {
 			{
 				name = "Class Notes",
-				path = "~/OneDrive/Class Notes",
+				path = "/Users/myrrh/Library/CloudStorage/OneDrive-WorcesterPolytechnicInstitute(wpi.edu)/Class Notes",
 			},
 		},
 
