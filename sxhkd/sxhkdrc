@@ -1,0 +1,32 @@
+# starter derived from https://www.maketecheasier.com/install-configure-bspwm/
+# make sxhkd reload its configuration files
+alt + Escape
+	pkill -USR1 -x sxhkd
+ 
+# quit or restart bspwm
+alt + shift + {q,r}
+	bspc {quit,wm -r}
+ 
+# create a new terminal window or swap the current one to the biggest one in the screen 
+alt + {_,shift + }Return
+	{Konsole, bspc node -s biggest.local}
+
+# close window
+super + shift + x
+    bspc node -c
+
+# kill window
+super + k
+    bspc node -k
+ 
+# change the window state
+alt + shift + {t,p,l,f}
+	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+ 
+# expand a window by moving one of its side outward
+super + alt + {h,j,k,l}
+	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+ 
+# focus or send a window to the given desktop
+alt + {d +, shift + }{1-9,0}
+	bspc {desktop -f,node -d} '^{1-9,10}'
