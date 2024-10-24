@@ -18,11 +18,11 @@ return {
 		"nvim-treesitter/nvim-treesitter",
 	},
 	opts = {
-		workspaces = {
-			{
-				name = "Class Notes",
-				path = "~/OneDrive/Class Notes",
-			},
+		-- workspaces = {
+		-- 	{
+		-- 		name = "Class Notes",
+		-- 		path = "~/OneDrive/Class Notes",
+		-- 	},
 		},
 
 		attachments = {
