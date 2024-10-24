@@ -14,6 +14,11 @@ return {
 					lookahead = true,
 
 					include_surrounding_whitespace = true,
+					keymaps = {
+						--- ... other keymaps
+						["ib"] = { query = "@code_cell.inner", desc = "in block" },
+						["ab"] = { query = "@code_cell.outer", desc = "around block" },
+					},
 				},
 				swap = {
 					enable = true,
@@ -50,6 +55,8 @@ return {
 					"git_rebase",
 					"python",
 					"rust",
+					"latex",
+					"vimdoc",
 				},
 				auto_install = true,
 			},
