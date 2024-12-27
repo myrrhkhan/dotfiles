@@ -9,14 +9,6 @@ return {
 	config = function()
 		local mason_null_ls = require("mason-null-ls")
 		local mason_dap = require("mason-nvim-dap")
-
-		handlers = {}
-
-		mason_null_ls.setup({
-			ensure_installed = {
-				"codelldb",
-			},
-		})
-		mason_dap.setup()
+		local dap = require("dap")
 	end,
 }
