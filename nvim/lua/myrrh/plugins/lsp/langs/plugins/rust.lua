@@ -32,7 +32,9 @@ local plugins = {
 		config = function()
 			local mason_registry = require("mason-registry")
 			local codelldb = mason_registry.get_package("codelldb")
-			local extension_path = codelldb:get_install_path() .. "/extension/"
+			local mason_packages = vim.fs.joinpath(vim.fn.stdpath("data"), "mason", "packages")
+			local extension_path = vim.fs.joinpath(mason_packages, "codelldb")
+			-- local extension_path = codelldb:get_install_path() .. "/extension/"
 			local codelldb_path = extension_path .. "adapter/codelldb"
 			local liblldb_path = extension_path .. "lldb/lib/liblldb.dylib"
 			-- If you are on Linux, replace the line above with the line below:

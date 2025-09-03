@@ -15,7 +15,11 @@ require("lazy").setup({
 	{ import = "myrrh.plugins" },
 	{ import = "myrrh.plugins.lsp" },
 	{ import = "myrrh.plugins.lsp.langs.plugins" },
-	{ import = "myrrh.plugins.colors" },
+	{ import = "myrrh.plugins.media" },
+	{ import = "myrrh.plugins.navigation" },
+	-- { import = "myrrh.plugins.session" },
+	{ import = "myrrh.plugins.treesitter" },
+	{ import = "myrrh.plugins.ui" },
 }, {
 	checker = {
 		enabled = true,
