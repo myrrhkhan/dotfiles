@@ -13,6 +13,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 	{ import = "myrrh.plugins" },
+	{ import = "myrrh.plugins.coding" },
 	{ import = "myrrh.plugins.debugging" },
 	{ import = "myrrh.plugins.git" },
 	{ import = "myrrh.plugins.lsp" },
