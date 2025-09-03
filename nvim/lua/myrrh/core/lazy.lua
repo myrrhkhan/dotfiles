@@ -18,7 +18,7 @@ require("lazy").setup({
 	{ import = "myrrh.plugins.editor" },
 	{ import = "myrrh.plugins.git" },
 	{ import = "myrrh.plugins.lsp" },
-	{ import = "myrrh.plugins.lsp.langs.plugins" },
+	{ import = "myrrh.plugins.lsp.languages" },
 	{ import = "myrrh.plugins.media" },
 	{ import = "myrrh.plugins.navigation" },
 	{ import = "myrrh.plugins.notes" },
