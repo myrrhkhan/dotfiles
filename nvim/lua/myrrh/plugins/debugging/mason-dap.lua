@@ -10,5 +10,8 @@ return {
 		local mason_null_ls = require("mason-null-ls")
 		local mason_dap = require("mason-nvim-dap")
 		local dap = require("dap")
+		mason_dap.setup({
+			handlers = {},
+		})
 	end,
 }
