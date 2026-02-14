@@ -21,7 +21,51 @@ return {
 		workspaces = {
 			{
 				name = "Class Notes",
-				path = "/Users/myrrh/Library/CloudStorage/OneDrive-WorcesterPolytechnicInstitute(wpi.edu)/Class Notes",
+				path = "/Users/myrrh/Documents/onedrivelocalarchive/Class Notes",
+			},
+			{
+				name = "no-vault",
+				path = function()
+					-- alternatively use the CWD:
+					-- return assert(vim.fn.getcwd())
+					return assert(vim.fs.dirname(vim.api.nvim_buf_get_name(0)))
+				end,
+				overrides = {
+					notes_subdir = vim.NIL, -- have to use 'vim.NIL' instead of 'nil'
+					new_notes_location = "current_dir",
+					templates = {
+						folder = vim.NIL,
+					},
+					disable_frontmatter = true,
+				},
+			},
+			{
+				name = "dynamic",
+				path = function()
+					local current_file = vim.api.nvim_buf_get_name(0)
+					local current_dir = vim.fs.dirname(current_file)
+
+					-- Search upward for .obsidian folder
+					local obsidian_root = vim.fs.find(".obsidian", {
+						upward = true,
+						path = current_dir,
+						type = "directory",
+					})[1]
+
+					if obsidian_root then
+						return vim.fs.dirname(obsidian_root)
+					else
+						return current_dir
+					end
+				end,
+				overrides = {
+					notes_subdir = vim.NIL,
+					new_notes_location = "current_dir",
+					templates = {
+						folder = vim.NIL,
+					},
+					disable_frontmatter = true,
+				},
 			},
 		},
 
