@@ -8,11 +8,9 @@ enable = [
   "nvim",
   "iterm2",
   "zsh",
+  "kitty",
+  "cava",
 ]
-
-[sketchybar]
-variant = "neuton"
-neuton_layout = "laptop"
 
 [sketchybar.features]
 spotify_widget = false

@@ -1,6 +1,6 @@
 [profile]
 id = "personal.mac"
-description = "Personal Mac — full brew groups, spotify bar widget optional"
+description = "Personal Mac — full brew groups; Spotify bar widget on"
 
 [modules]
 enable = [
@@ -8,11 +8,9 @@ enable = [
   "nvim",
   "iterm2",
   "zsh",
+  "kitty",
+  "cava",
 ]
-
-[sketchybar]
-variant = "neuton"
-neuton_layout = "desktop"
 
 [sketchybar.features]
 spotify_widget = true

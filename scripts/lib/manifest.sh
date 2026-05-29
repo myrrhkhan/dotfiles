@@ -12,7 +12,7 @@ manifest_path() {
 }
 
 # manifest_get <key> [profile]
-# Keys use dot notation, e.g. sketchybar.variant
+# Keys use dot notation, e.g. sketchybar.features.spotify_widget
 manifest_get() {
   local key="$1"
   local profile="${2:-${DOTFILES_PROFILE:-work.mac}}"
@@ -22,12 +22,6 @@ manifest_get() {
   case "$key" in
     profile.id)
       _manifest_scalar "$file" '^id = ' "profile"
-      ;;
-    sketchybar.variant)
-      _manifest_scalar "$file" '^variant = ' "sketchybar"
-      ;;
-    sketchybar.neuton_layout)
-      _manifest_scalar "$file" '^neuton_layout = ' "sketchybar"
       ;;
     sketchybar.features.spotify_widget)
       _manifest_bool "$file" '^spotify_widget = ' "sketchybar.features"
@@ -94,13 +88,26 @@ manifest_brew_groups() {
   local file
   file="$(manifest_path "$profile")"
   awk '
+    function print_quoted(line,    rest) {
+      rest = line
+      while (match(rest, /"[^"]+"/)) {
+        print substr(rest, RSTART + 1, RLENGTH - 2)
+        rest = substr(rest, RSTART + RLENGTH)
+      }
+    }
     /^\[brew\]/ { in_brew=1; in_groups=0; next }
     /^\[/ { in_brew=0; in_groups=0 }
-    in_brew && /^groups = \[/ { in_groups=1; next }
-    in_groups && /\]/ { exit }
+    in_brew && /^groups = / {
+      in_groups=1
+      line = $0
+      sub(/^groups = /, "", line)
+      print_quoted(line)
+      if (line ~ /\]/) { in_groups=0 }
+      next
+    }
     in_groups {
-      gsub(/[^a-zA-Z0-9_-]/, "", $0)
-      if (length($0) > 0) print $0
+      print_quoted($0)
+      if ($0 ~ /\]/) { in_groups=0 }
     }
   ' "$file"
 }

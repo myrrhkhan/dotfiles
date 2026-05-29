@@ -22,8 +22,8 @@ Requires: `stow`, `brew`, `gum` (`brew install stow gum`).
 
 | Profile | Manifest | Purpose |
 |---------|----------|---------|
-| `work.mac` | `profiles/work.mac/manifest.toml` | WM, bar, nvim, iterm colors, zsh (OMZ+p10k only); conservative brew groups |
-| `personal.mac` | `profiles/personal.mac/manifest.toml` | Same modules; more brew groups; spotify bar widget on by default |
+| `work.mac` | `profiles/work.mac/manifest.toml` | WM, bar, nvim, kitty, cava, iterm colors, zsh; conservative brew groups |
+| `personal.mac` | `profiles/personal.mac/manifest.toml` | Same modules; more brew groups; Spotify bar widget on |
 
 Set `DOTFILES_PROFILE` or use `make bootstrap-work` / `bootstrap-personal`.
 
@@ -49,9 +49,13 @@ scripts/brew-questionnaire.sh   # gum multi-select casks
 | `nvim` | `~/.config/nvim/` | — |
 | `iterm2` | `~/.config/iterm2/colors/` | — |
 | `zsh` | `~/.oh-my-zsh`, `~/.p10k.zsh` | — |
+| `kitty` | `~/.config/kitty/` | kitty cask |
+| `cava` | `~/.config/cava/` | cava formula |
 | `sketchybar-{felix,neuton,oxgr}` | `~/.config/sketchybar/` | via `sketchybar-common` |
 
-**Not in manifests (yet):** `kitty` (broken — fix before enabling), Raycast, Zed.
+Wallpapers live at `~/dotfiles/Wallpapers/` (not stowed). Kitty uses `${HOME}/dotfiles/Wallpapers/kitty_background.png`.
+
+**Not in manifests (yet):** Raycast, Zed.
 
 **Never in repo or manifests:** `gh` hosts, GitHub Copilot, Raycast tokens/secrets.
 
@@ -59,25 +63,25 @@ scripts/brew-questionnaire.sh   # gum multi-select casks
 
 ## Sketchybar
 
-Three variants under `modules/sketchybar-*/home/.config/sketchybar/` (only one active at a time):
+**Default bar (bootstrap):** neuton + **laptop** layout on every profile — transparent bar, weather, battery, volume.
 
-- `sketchybar-felix`
-- `sketchybar-neuton` (layouts: `laptop`, `desktop`, `default`)
-- `sketchybar-oxgr`
+**Spotify widget** (profile only):
 
-Switch:
+| Profile | `spotify_widget` |
+|---------|------------------|
+| `work.mac` | `false` |
+| `personal.mac` | `true` |
+
+Requires the Spotify app installed locally (not a Homebrew cask in this repo). The widget is omitted from `sketchybarrc` when off.
 
 ```bash
 ./scripts/sketchybar-switch.sh --from-manifest
-./scripts/sketchybar-switch.sh --variant felix --spotify off
-./scripts/sketchybar-switch.sh --variant neuton --layout desktop --spotify on --save
+make sketchybar   # uses DOTFILES_PROFILE
 ```
 
-**Spotify widget** is controlled only by manifest `sketchybar.features.spotify_widget` or `--spotify on|off` — nothing is hardcoded per profile in shell logic.
+**Experiments** (CLI overrides): `--variant felix|oxgr`, `--layout desktop`, `--spotify on|off`.
 
-- **Neuton:** `modules/sketchybar-neuton/features/` assembles `sketchybarrc` from base + optional fragment.
-- **Felix:** omits `source "$ITEM_DIR/spotify.sh"` and installs a no-op `items/spotify.sh` when off.
-- **Oxgr:** no spotify items.
+Alternate variants live under `modules/sketchybar-*/`; only one is stowed at a time.
 
 ## Brew questionnaire
 
@@ -100,8 +104,16 @@ Writes a temp Brewfile and runs `brew bundle install`. Saves last choices to `~/
 
 `only-linux/` remains for Hyprland/Fedora; same manifest pattern can be extended later.
 
+## First-time kitty on a machine
+
+If `~/.config/kitty` is an old copied directory (not stow symlinks), remove it before bootstrap:
+
+```bash
+rm -rf ~/.config/kitty
+make bootstrap-work   # or bootstrap-personal
+```
+
 ## Tentative (do not bootstrap yet)
 
-- **Kitty** — fix config drift, then add `"kitty"` to manifests.
 - **Raycast** — sanitized exports only.
 - **Zed** — partial `settings.json` + extension picker (like brew groups).

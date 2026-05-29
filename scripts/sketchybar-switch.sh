@@ -10,6 +10,10 @@ source "$(dirname "$0")/lib/manifest.sh"
 
 export DOTFILES_PROFILE="${DOTFILES_PROFILE:-work.mac}"
 
+# Repo default bar (variant/layout); Spotify comes from manifest when using --from-manifest
+SKETCHYBAR_DEFAULT_VARIANT="neuton"
+SKETCHYBAR_DEFAULT_LAYOUT="laptop"
+
 VARIANT=""
 LAYOUT=""
 SPOTIFY=""
@@ -20,10 +24,10 @@ usage() {
   cat <<'EOF'
 Usage: sketchybar-switch.sh [options]
 
-  --from-manifest          Use profiles/<DOTFILES_PROFILE>/manifest.toml (default in bootstrap)
-  --variant <felix|neuton|oxgr>
-  --layout <laptop|desktop|default>   Neuton layout only
-  --spotify <on|off>                  Override spotify_widget feature
+  --from-manifest          Neuton + laptop; spotify from manifest spotify_widget
+  --variant <felix|neuton|oxgr>       Override default variant
+  --layout <laptop|desktop|default>   Override default layout (neuton only)
+  --spotify <on|off>                  Override manifest spotify_widget
   --save                              Write overrides to ~/.config/dotfiles/local.toml (gitignored)
 
 Examples:
@@ -52,8 +56,8 @@ while [[ $# -gt 0 ]]; do
 done
 
 if [[ "$FROM_MANIFEST" -eq 1 ]]; then
-  VARIANT="${VARIANT:-$(manifest_get sketchybar.variant)}"
-  LAYOUT="${LAYOUT:-$(manifest_get sketchybar.neuton_layout)}"
+  VARIANT="${VARIANT:-$SKETCHYBAR_DEFAULT_VARIANT}"
+  LAYOUT="${LAYOUT:-$SKETCHYBAR_DEFAULT_LAYOUT}"
   if [[ -z "$SPOTIFY" ]]; then
     if manifest_get sketchybar.features.spotify_widget; then
       SPOTIFY=1
