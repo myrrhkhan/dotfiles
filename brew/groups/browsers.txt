@@ -1,0 +1,5 @@
+firefox
+brave-browser
+google-chrome
+zen
+zen-browser

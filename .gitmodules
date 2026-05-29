@@ -1,9 +1,3 @@
-[submodule "catpuccin-iterm"]
-	path = catpuccin-iterm
-	url = https://github.com/catppuccin/iterm.git
-[submodule "discord-theme"]
-	path = discord-theme
-	url = https://github.com/catppuccin/discord.git
 [submodule "fonts/nerd-fonts"]
 	path = fonts/nerd-fonts
 	url = git@github.com:ryanoasis/nerd-fonts.git

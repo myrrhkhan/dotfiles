@@ -1,0 +1,8 @@
+blender
+gimp
+krita
+natron
+wacom-tablet
+wacom-inkspace
+loopback
+obs

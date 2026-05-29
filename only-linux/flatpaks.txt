@@ -1,2 +1,0 @@
-md.obsidian.Obsidian
-xyz.armcord.ArmCord

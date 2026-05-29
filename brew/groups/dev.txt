@@ -1,0 +1,13 @@
+kitty
+iterm2
+raycast
+visual-studio-code
+vscodium
+zed
+obsidian
+kdiff3
+shottr
+monitorcontrol
+grandperspective
+tomatobar
+onyx

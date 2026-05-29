@@ -1,0 +1,2 @@
+# aerospace installed via modules/aerospace/Brewfile (tap cask)
+nikitabobko/tap/aerospace

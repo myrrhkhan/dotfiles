@@ -1,2 +1,9 @@
 *.DS_Store
 nvim/lazy-lock.json
+
+# Local machine state (never commit)
+.config/dotfiles/
+
+# iTerm2 dynamic paths if ever linked locally
+**/iterm2/AppSupport/
+**/iterm2/sockets/

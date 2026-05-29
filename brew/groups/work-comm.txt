@@ -1,0 +1,8 @@
+slack
+microsoft-office
+microsoft-auto-update
+copilot-cli
+element
+discord
+whatsapp
+thunderbird

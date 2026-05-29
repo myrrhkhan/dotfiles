@@ -1,0 +1,5 @@
+font-3270-nerd-font
+font-blex-mono-nerd-font
+font-hack-nerd-font
+font-jetbrains-mono-nerd-font
+sf-symbols

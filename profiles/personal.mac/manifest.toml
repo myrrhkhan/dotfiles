@@ -1,0 +1,35 @@
+[profile]
+id = "personal.mac"
+description = "Personal Mac — full brew groups, spotify bar widget optional"
+
+[modules]
+enable = [
+  "aerospace",
+  "nvim",
+  "iterm2",
+  "zsh",
+]
+
+[sketchybar]
+variant = "neuton"
+neuton_layout = "desktop"
+
+[sketchybar.features]
+spotify_widget = true
+
+[brew]
+groups = [
+  "work-comm",
+  "dev",
+  "wm",
+  "browsers",
+  "creative",
+  "leisure",
+  "academic",
+  "fonts",
+]
+default_on = []
+
+[brew.questionnaire]
+interactive = true
+ui = "gum"
