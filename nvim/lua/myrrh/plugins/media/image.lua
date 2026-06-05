@@ -19,7 +19,7 @@ return {
 			require("image").setup({
 				backend = "kitty",
 				integrations = {
-					filetypes = { "markdown, vimwiki, ipynb" },
+					filetypes = { "markdown", "vimwiki", "ipynb" },
 				},
 				max_width = 100,
 				max_height = 12,

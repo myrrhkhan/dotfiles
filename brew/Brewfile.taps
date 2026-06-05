@@ -1,6 +1,6 @@
 tap "felixkratz/formulae"
-tap "homebrew/cask-fonts"
-tap "homebrew/services"
+# tap "homebrew/cask-fonts"
+# tap "homebrew/services"
 tap "koekeishiya/formulae"
 tap "nikitabobko/tap"
 tap "null-dev/firefox-profile-switcher"

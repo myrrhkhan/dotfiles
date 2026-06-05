@@ -1,5 +1,5 @@
 tap "felixkratz/formulae"
-tap "homebrew/cask-fonts"
+# tap "homebrew/cask-fonts"
 
 brew "felixkratz/formulae/sketchybar"
 brew "jq"

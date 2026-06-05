@@ -1,0 +1,4 @@
+-- All plugins are imported via lazy.lua directly.
+-- This file exists to make 'lazy.lua' imports work correctly.
+-- Individual plugin modules are imported in lazy.lua to avoid the
+-- 'Invalid plugin spec' error this directory caused when init.lua was missing.

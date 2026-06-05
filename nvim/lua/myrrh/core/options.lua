@@ -1,3 +1,7 @@
+-- Fix luarocks.nvim path issue (dkjson not found)
+local rocks_vendor = vim.fn.stdpath("data") .. "/lazy/luarocks.nvim/.rocks/share/lua/5.1/luarocks/vendor/?.lua;"
+package.path = rocks_vendor .. package.path
+
 local opt = vim.opt
 
 -- line numbers
