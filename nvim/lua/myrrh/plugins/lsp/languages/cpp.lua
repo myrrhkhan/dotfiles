@@ -1,3 +1,5 @@
+local lsp_setup = require("myrrh.plugins.lsp._lsp_setup").lsp_setup
+
 return {
 	-- Mason tools
 	lsp_servers = { "clangd" },
@@ -19,26 +21,7 @@ return {
 
 	-- Language-specific LSP configuration (from your setup/cpp.lua)
 	lsp_config = {
-		clangd = function()
-			local lspconfig = vim.lsp.config
-			local cmp_nvim_lsp = require("cmp_nvim_lsp")
-			local capabilities = cmp_nvim_lsp.default_capabilities()
-
-			lspconfig("clangd", {
-				capabilities = capabilities,
-				-- COMMENTED OUT - Enhanced clangd configuration:
-				-- cmd = {
-				--   "clangd",
-				--   "--background-index",
-				--   "--clang-tidy",
-				--   "--header-insertion=iwyu",
-				--   "--completion-style=detailed",
-				--   "--function-arg-placeholders",
-				--   "--fallback-style=llvm",
-				-- },
-			})
-			vim.lsp.enable("clangd")
-		end,
+		clangd = lsp_setup("clangd"),
 	},
 
 	-- COMMENTED OUT - C++ debugging setup:

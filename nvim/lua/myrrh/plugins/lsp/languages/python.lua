@@ -1,3 +1,5 @@
+local lsp_setup = require("myrrh.plugins.lsp._lsp_setup").lsp_setup
+
 return {
 	-- Mason tools
 	lsp_servers = { "pyright" },
@@ -27,16 +29,7 @@ return {
 
 	-- Language-specific LSP configuration (from your setup/python.lua)
 	lsp_config = {
-		pyright = function()
-			local lspconfig = vim.lsp.config
-			local cmp_nvim_lsp = require("cmp_nvim_lsp")
-			local capabilities = cmp_nvim_lsp.default_capabilities()
-
-			lspconfig("pyright", {
-				capabilities = capabilities,
-			})
-			vim.lsp.enable("pyright")
-		end,
+		pyright = lsp_setup("pyright"),
 	},
 
 	-- COMMENTED OUT - Potential Python debugging setup:

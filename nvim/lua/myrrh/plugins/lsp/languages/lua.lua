@@ -1,21 +1,17 @@
-return {
-	-- Mason tools
-	lsp_servers = { "lua_ls" },
-	formatters = { "stylua" },
-	linters = {},
+	local lsp_setup = require("myrrh.plugins.lsp._lsp_setup").lsp_setup
 
-	-- Language-specific plugins
-	plugins = {},
+	return {
+		-- Mason tools
+		lsp_servers = { "lua_ls" },
+		formatters = { "stylua" },
+		linters = {},
 
-	-- Language-specific LSP configuration (from your setup/lua.lua)
-	lsp_config = {
-		lua_ls = function()
-			local lspconfig = vim.lsp.config
-			local cmp_nvim_lsp = require("cmp_nvim_lsp")
-			local capabilities = cmp_nvim_lsp.default_capabilities()
+		-- Language-specific plugins
+		plugins = {},
 
-			lspconfig("lua_ls", {
-				capabilities = capabilities,
+		-- Language-specific LSP configuration (from your setup/lua.lua)
+		lsp_config = {
+			lua_ls = lsp_setup("lua_ls", {
 				settings = {
 					Lua = {
 						diagnostics = {
@@ -29,8 +25,6 @@ return {
 						},
 					},
 				},
-			})
-			vim.lsp.enable("lua_ls")
-		end,
-	},
-}
+			}),
+		},
+	}
