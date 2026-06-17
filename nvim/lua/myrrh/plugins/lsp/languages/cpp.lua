@@ -20,11 +20,11 @@ return {
 	-- Language-specific LSP configuration (from your setup/cpp.lua)
 	lsp_config = {
 		clangd = function()
-			local lspconfig = require("lspconfig")
+			local lspconfig = vim.lsp.config
 			local cmp_nvim_lsp = require("cmp_nvim_lsp")
 			local capabilities = cmp_nvim_lsp.default_capabilities()
 
-			lspconfig["clangd"].setup({
+			lspconfig("clangd", {
 				capabilities = capabilities,
 				-- COMMENTED OUT - Enhanced clangd configuration:
 				-- cmd = {
@@ -37,6 +37,7 @@ return {
 				--   "--fallback-style=llvm",
 				-- },
 			})
+			vim.lsp.enable("clangd")
 		end,
 	},
 
