@@ -8,6 +8,7 @@ local enabled_languages = {
 	"webdev",
 	"rust",
 	"lua",
+	"swift",
 }
 
 -- Lazy-load language configurations to avoid circular dependencies
