@@ -54,6 +54,7 @@ alt-9 = 'workspace 9'
 
 # Custom named workspaces
 alt-b = 'workspace Browser'
+alt-n = 'workspace Notes'
 alt-f = 'workspace Files'
 alt-m = 'workspace Music'
 alt-t = 'workspace Terminal'
@@ -74,7 +75,8 @@ alt-shift-8 = 'move-node-to-workspace 8'
 alt-shift-9 = 'move-node-to-workspace 9'
 
 alt-shift-b = 'move-node-to-workspace Browser'
-alt-shift-e = 'move-node-to-workspace Files'
+alt-shift-n = 'move-node-to-workspace Notes'
+alt-shift-f = 'move-node-to-workspace Files'
 alt-shift-m = 'move-node-to-workspace Music'
 alt-shift-t = 'move-node-to-workspace Terminal'
 alt-shift-w = 'move-node-to-workspace W'
@@ -153,3 +155,7 @@ run = "move-node-to-workspace Discord"
 [[on-window-detected]]
 if.app-id = "com.tinyspeck.slackmacgap"
 run = "move-node-to-workspace Slack"
+
+[[on-window-detected]]
+if.app-id = "md.obsidian"
+run = "move-node-to-workspace Notes"

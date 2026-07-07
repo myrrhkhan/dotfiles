@@ -1,0 +1,2 @@
+swift-format add to reqs
+dock hide
