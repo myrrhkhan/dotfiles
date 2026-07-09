@@ -10,3 +10,6 @@
 [submodule "only-linux/firefox-profile-switcher-connector"]
 	path = only-linux/firefox-profile-switcher-connector
 	url = git@github.com:null-dev/firefox-profile-switcher-connector.git
+[submodule "modules/tmux/home/.tmux/plugins/tpm"]
+	path = modules/tmux/home/.tmux/plugins/tpm
+	url = git@github.com:tmux-plugins/tpm.git
